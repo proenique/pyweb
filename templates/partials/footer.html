@@ -1,0 +1,14 @@
+{% load static %}
+<footer>
+    <div class="footer-logo">
+        <img src="{{ logo }}" alt="">
+    </div>
+    <div class="footer-social">
+        <a href="{{ facebook }}"><i class="fa-brands fa-facebook"></i></a>
+        <a href="{{ twiter }}"><i class="fa-brands fa-twitter"></i></a>
+        <a href="{{ instagram }}"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <div class="footer">
+        <p>Pyweb inc &copy;2022. All rights reserved <a href="{% url 'base:terms' %}"> Terms & Conditions</a></p>
+    </div> 
+</footer>

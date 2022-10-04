@@ -1,0 +1,25 @@
+{% load static %}
+
+<header>
+    <nav>
+        <a href="/" class="logo">
+            <li><img src="{{ logo }}" alt=""></li>
+            <li><h1>{{ name|title }} </h1></li>  
+        </a>
+        <div class="home-links">
+            <a class="home" href="{% url 'base:home' %}">𝓗𝕠𝐌Ẹ</a>
+            <a class="contact-us" href="{% url 'base:contact' %}">𝖈𝖔𝖓𝖙𝖆𝖈𝖙</a>
+            <a class="about" href="{% url 'base:about' %}">𝖆𝖇𝖔𝖚𝖙</a>
+        </div>
+        <div class="account-links">
+            
+            {% if request.user.is_authenticated %}
+            <a class="logout" href="{% url 'accounts:logout' %}">𝖑𝖔𝖌𝖔𝖚𝖙</a>
+            <a class="profile" href="{% url 'users:user_detail' request.user.profile.slug %}">𝖆𝖈𝖈𝖔𝖚𝖓𝖙</a>
+            {% else %}
+            <a class="login" href="{% url 'accounts:login' %}">𝖑𝖔𝖌𝖎𝖓</a>
+            <a class="register" href="{% url 'accounts:register' %}">𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗</a>
+            {% endif %}
+        </div>
+    </nav>
+</header>

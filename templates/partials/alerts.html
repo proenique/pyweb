@@ -1,0 +1,21 @@
+{% if messages %}
+<input type="checkbox" name="alert-toggle" class="alert-toggle" id="alert-toggle">
+<section class="alerts">
+    
+    <div class="alert">
+
+        {% for message in messages %}
+        <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            <strong>{{ message|safe }}</strong>
+            <label for="alert-toggle" class="alert-toggle-label">
+                <span>Close</span>
+            </label>
+        </div>
+        {% endfor %}
+        
+    </div>
+    
+</section>
+
+
+{% endif %}
